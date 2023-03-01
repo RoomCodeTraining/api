@@ -14,17 +14,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-      $this->call(CategorySeeder::class);
-      \App\Models\Course::factory(10)->create();
-      User::create([
-        'first_name' => 'John',
-        'last_name' => 'Doe',
-        'contact' => '09123456789',
-        'email' => 'admin@email.com',
-        'password' => Hash::make('password'),
-        'is_admin' => true,
+        $this->call(CategorySeeder::class);
+        // \App\Models\Course::factory(10)->create();
+        User::create([
+          'first_name' => 'John',
+          'last_name' => 'Doe',
+          'contact' => '09123456789',
+          'email' => 'admin@email.com',
+          'password' => Hash::make('password'),
+          'is_admin' => true,
     ]);
-}
-
-
+    }
 }
