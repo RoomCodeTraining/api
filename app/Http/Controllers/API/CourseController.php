@@ -29,7 +29,6 @@ class CourseController extends Controller
      */
     public function store(StoreCourseRequest $request, StoreCourseAction $storeCourseAction)
     {
-
         // store image in storage
         $courseImageUrl = $request->file('image')->store('courses', 'public');
 
@@ -79,6 +78,6 @@ class CourseController extends Controller
 
     public function userCourses(Request $request)
     {
-       return CourseResource::collection($request->user()->services);
+        return CourseResource::collection($request->user()->services);
     }
 }

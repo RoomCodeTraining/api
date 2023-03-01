@@ -17,11 +17,13 @@ return new class extends Migration {
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->string('video')->nullable();
-            $table->float('price')->nullable();
+            $table->integer('price')->nullable();
             $table->boolean('is_free')->default(false);
             $table->boolean('is_published')->default(false);
             $table->foreignId('category_id')->constrained();
             $table->foreignId('user_id')->constrained();
+            $table->integer('views')->default(0);
+            $table->integer('likes')->default(0);
             $table->timestamps();
         });
     }

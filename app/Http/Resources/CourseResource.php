@@ -20,9 +20,12 @@ class CourseResource extends JsonResource
             'slug' => $this->slug,
             'image' => "http://e-api.ddev.site/storage/" . $this->image,
             'category' => CategoryResource::make($this->category->load('courses')),
+            'user' => UserResource::make($this->user),
             'description' => $this->description,
+            'price' => $this->price,
+            'likes' => $this->likes,
+            'views' => $this->views,
             'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
         ];
     }
 }

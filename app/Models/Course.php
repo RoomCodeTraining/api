@@ -11,9 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Course extends Model
 {
     use HasFactory, FormatCreatedAt;
-
     protected $guarded = [];
-
     /**
      * user
      *
@@ -21,9 +19,8 @@ class Course extends Model
      */
     public function user() : BelongsTo
     {
-      return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
-
     /**
      * category
      *
@@ -31,7 +28,7 @@ class Course extends Model
      */
     public function category() : BelongsTo
     {
-      return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     /**
@@ -42,6 +39,6 @@ class Course extends Model
      */
     public function scopePopular($query)
     {
-      return $query->latest();
+        return $query->latest();
     }
 }

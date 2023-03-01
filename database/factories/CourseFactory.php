@@ -24,10 +24,12 @@ class CourseFactory extends Factory
             'name' => $name,
             'slug' => Str::slug($name),
             'description' => fake()->paragraph(),
-            'price' => fake()->randomFloat(2, 0, 100),
-            'image' => fake()->imageUrl(),
+            'price' => rand(5000, 100000),
+            'image' => "courses/zGhxN8QT1cSvUtYRyhfd8nbvDEbdqjP61YcTcUwn.jpg",
             'category_id' => Category::all()->random()->id,
             'user_id' => User::factory(),
+            'likes' => fake()->numberBetween(0, 100),
+            'views' => fake()->numberBetween(0, 500),
         ];
     }
 }
