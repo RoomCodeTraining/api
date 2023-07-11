@@ -23,13 +23,13 @@ class CourseFactory extends Factory
         return [
             'name' => $name,
             'slug' => Str::slug($name),
-            'description' => fake()->paragraph(),
-            'price' => rand(5000, 100000),
+            'description' => 'Description du ocursus',
+            'price' => rand(1000, 10000),
             'image' => "courses/zGhxN8QT1cSvUtYRyhfd8nbvDEbdqjP61YcTcUwn.jpg",
             'category_id' => Category::all()->random()->id,
             'user_id' => User::factory(),
-            'likes' => fake()->numberBetween(0, 100),
-            'views' => fake()->numberBetween(0, 500),
+            'likes' => rand(0, 500),
+            'views' => rand(0, 500)
         ];
     }
 }
