@@ -19,9 +19,9 @@ class CourseFactory extends Factory
      */
     public function definition(): array
     {
-        $name = fake()->unique()->word();
+        $name = "Cours de ".rand(1, 100);
         return [
-            'name' => $name,
+            'name' => '',
             'slug' => Str::slug($name),
             'description' => 'Description du ocursus',
             'price' => rand(1000, 10000),
